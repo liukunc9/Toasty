@@ -1,0 +1,42 @@
+//ext是自定义属性，很多人都喜欢把所有关于版本的信息都利用ext放在另一个自己新建的gradle文件中集中管理
+ext.deps = [:]
+def versions = [:]
+//versions的定义是为了便于批量修改依赖版本
+versions.android_gradle_plugin = "3.3.2"
+versions.android_maven_gradle_plugin = "2.1"
+versions.butterknife = "10.1.0"
+versions.fragmentationx = "1.0.1"
+versions.retrofit = "2.3.0"
+versions.okhttp_logging_interceptor = "3.9.0"
+
+def deps = [:]
+
+//以下依赖的导入方式，在项目的dependencies 添加classpath '...' 来引入
+deps.android_gradle_plugin = "com.android.tools.build:gradle:$versions.android_gradle_plugin"
+deps.android_maven_gradle_plugin = "com.github.dcendents:android-maven-gradle-plugin:$versions.android_maven_gradle_plugin"
+
+ext.deps = deps
+
+//Android P（包含更高版本）系统禁止使用所有未加密的连接,所以如果要使用http连接，需要将targetSdkVersion改为27及以下
+//或者在AndroidManifest.xml的application属性添加networkSecurityConfig属性来允许http（推荐）
+def build_versions = [:]
+build_versions.min_sdk = 19
+build_versions.target_sdk = 28
+ext.build_versions = build_versions
+
+//默认添加代码仓库路径
+def addRepos(RepositoryHandler handler) {
+    handler.google()
+    handler.mavenCentral()
+    //Add the aliyun repository
+    handler.maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+    handler.maven { url 'http://maven.aliyun.com/nexus/content/repositories/jcenter' }
+
+    //Add the JitPack repository
+    handler.maven { url "https://jitpack.io" }
+
+    //Add the Local repository
+    //handler.maven{ url 'LocalRepository'}
+}
+
+ext.addRepos = this.&addRepos
