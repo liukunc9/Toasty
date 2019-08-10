@@ -4,10 +4,6 @@ def versions = [:]
 //versions的定义是为了便于批量修改依赖版本
 versions.android_gradle_plugin = "3.3.2"
 versions.android_maven_gradle_plugin = "2.1"
-versions.butterknife = "10.1.0"
-versions.fragmentationx = "1.0.1"
-versions.retrofit = "2.3.0"
-versions.okhttp_logging_interceptor = "3.9.0"
 
 def deps = [:]
 
