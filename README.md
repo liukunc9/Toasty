@@ -37,16 +37,16 @@ Toasty.Config.getInstance()
 Toasty.Config.getInstance()
         .setSuccessColor(android.R.color.holo_blue_light) //修改successd的背景颜色
         .setGravity(Gravity.CENTER);
+```
 效果：
 ![image](https://github.com/liukunc9/Toasty/blob/master/images/5.png)
-```
 ```
 Toasty.Config.getInstance()
         .setSuccessColor(android.R.color.holo_orange_light) //修改successd的背景颜色
         .setGravity(Gravity.CENTER);
+```
 效果：
 ![image](https://github.com/liukunc9/Toasty/blob/master/images/6.png)
-```
 
 ## 使用示例
 
