@@ -1,4 +1,3 @@
 <resources>
-    <string name="app_name">Toasty</string>
     <string name="toast_message">Toast message</string>
 </resources>
