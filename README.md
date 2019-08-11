@@ -18,10 +18,10 @@ allprojects {
 ```
 dependencies {
   ...
-  implementation 'com.github.liukunc9:Toasty:1.0.0'
+  implementation 'com.github.liukunc9:Toasty:1.0.1'
   
   //如果你使用了androidx，使用下面这个
-  implementation 'com.github.liukunc9:Toasty:x.1.0.0'
+  implementation 'com.github.liukunc9:Toasty:x.1.0.1'
 }
 ```
 
