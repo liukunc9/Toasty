@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
         //设置 Toasty 显示位置
         Toasty.Config.getInstance()
+                .setSuccessColor(android.R.color.holo_blue_light) //修改successd的背景颜色
                 .setGravity(Gravity.CENTER);
 
         init();
